@@ -1,3 +1,18 @@
+@font-face {
+  font-family: Komigo;
+  src: url("../../componentes/fonts/Komigo.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: ComicReal;
+  src: url("../../componentes/fonts/ComicReal.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: Handwrite;
+  src: url("../../componentes/fonts/Handwriting.ttf") format('truetype');
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -8,10 +23,16 @@ body{
   margin: 16px;
   background-color: #f7f1da;
   /* background-image: ; */
+  font-family: 'ComicReal';
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Komigo';
 }
 
 :root{
   --vermelho: #D45238;
   --amarelo: #E6C137;
   --rosa: #B7457C;
+  --yelow: #fffb0b;
 }
