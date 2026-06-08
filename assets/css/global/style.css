@@ -36,3 +36,24 @@ h1,h2,h3,h4,h5,h6{
   --rosa: #B7457C;
   --yelow: #fffb0b;
 }
+
+header {
+  background-color: var(--amarelo);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  border: 4px solid #000000;
+  margin-bottom: 16px;
+
+  & .aside-icons {
+    display: flex;
+  }
+
+  & ul {
+    display: flex;
+    min-width: 400px;
+    justify-content: space-between;
+    list-style: none;
+  }
+}

@@ -2,27 +2,6 @@
 @import './carousel.css';
 
 /*Inicio*/
-header {
-  background-color: var(--amarelo);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 30px;
-  border: 4px solid #000000;
-  margin-bottom: 16px;
-
-  & .aside-icons {
-    display: flex;
-  }
-
-  & ul {
-    display: flex;
-    min-width: 400px;
-    justify-content: space-between;
-    list-style: none;
-  }
-}
-
 /*Carrossel*/
 .carousel {
   height: 70vh;
