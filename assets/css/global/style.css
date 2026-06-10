@@ -1,59 +1,5 @@
-@font-face {
-  font-family: Komigo;
-  src: url("../../componentes/fonts/Komigo.ttf") format('truetype');
-}
-
-@font-face {
-  font-family: ComicReal;
-  src: url("../../componentes/fonts/ComicReal.ttf") format('truetype');
-}
-
-@font-face {
-  font-family: Handwrite;
-  src: url("../../componentes/fonts/Handwriting.ttf") format('truetype');
-}
-
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body{
-  margin: 16px;
-  background-color: #f7f1da;
-  /* background-image: ; */
-  font-family: 'ComicReal';
-}
-
-h1,h2,h3,h4,h5,h6{
-  font-family: 'Komigo';
-}
-
-:root{
-  --vermelho: #D45238;
-  --amarelo: #E6C137;
-  --rosa: #B7457C;
-  --yelow: #fffb0b;
-}
-
-header {
-  background-color: var(--amarelo);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 30px;
-  border: 4px solid #000000;
-  margin-bottom: 16px;
-
-  & .aside-icons {
-    display: flex;
-  }
-
-  & ul {
-    display: flex;
-    min-width: 400px;
-    justify-content: space-between;
-    list-style: none;
-  }
 }

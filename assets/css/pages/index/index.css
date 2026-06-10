@@ -1,8 +1,71 @@
 @import '../../global/style.css';
 @import './carousel.css';
 
+@font-face {
+  font-family: Komigo;
+  src: url("../../../componentes/fonts/Komigo.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: ComicReal;
+  src: url("../../../componentes/fonts/ComicReal.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: Handwrite;
+  src: url("../../../componentes/fonts/Handwriting.ttf") format('truetype');
+}
+
+/*--------------------------*/
+/*Estilização geral do index*/
+/*--------------------------*/
+body{
+  margin: 16px;
+  background-color: #f7f1da;
+  /* background-image: ; */
+  font-family: 'ComicReal';
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Komigo';
+}
+
+:root{
+  --vermelho: #D45238;
+  --amarelo: #E6C137;
+  --rosa: #B7457C;
+  --yelow: #fffb0b;
+}
+
+header {
+  position: sticky;
+  top:0;
+  background-color: var(--amarelo);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  border: 4px solid #000000;
+  margin-bottom: 16px;
+  z-index: 5;
+
+  & .aside-icons {
+    display: flex;
+  }
+
+  & ul {
+    display: flex;
+    min-width: 400px;
+    justify-content: space-between;
+    list-style: none;
+  }
+}
+
+
+/*--------------------------*/
 /*Inicio*/
 /*Carrossel*/
+/*--------------------------*/
 .carousel {
   height: 70vh;
   position: relative;
@@ -151,6 +214,7 @@
   }
 }
 
+
 /*animações de carrossel*/
 .carousel {
   & .list {
@@ -212,6 +276,7 @@
   }
 }
 
+
 /*----Categorias----*/
 .categorias {
   display: flex;
@@ -251,6 +316,7 @@
     color: #000000;
   }
 }
+
 
 /*----cards----*/
 .cards-area {
@@ -332,10 +398,13 @@
   }
 }
 
+
+/*--------------------------*/
 /*Sobre nós*/
 /*quem somos*/
+/*--------------------------*/
 .sobre-nos {
-  border: solid #000;
+  background-image: linear-gradient(#f7f1da, #f7e9da, #efdab8, #e7bd90);
   width: 100%;
   padding: 50px;
 
@@ -410,5 +479,72 @@
         4% 100%
       );
     }
+  }
+}
+
+
+/*-----------------*/
+/*-----Contato-----*/
+/*-----------------*/
+.contato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  gap: 10px;
+
+  & .formulario {
+    width: 45%;
+    padding: 30px;
+    border: 4px solid #000;
+    background-color: #e8c1d2;
+
+    & label {
+      color: var(--p-marrom);
+    }
+
+    & form {
+      display: flex;
+      flex-direction: column;
+
+      & label {
+        margin-bottom: 5px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      & input,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 3px solid #000000;
+        font-size: 15px;
+      }
+
+      & textarea {
+        height: 140px;
+        resize: vertical;
+      }
+    }
+  }
+
+  & .btn {
+    background-color: var(--vermelho);
+    color: var(--a-color);
+    padding: 14px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    align-self: center;
+  }
+
+  & .btn:hover {
+    opacity: 0.8;
+  }
+
+  & input{
+    font-family: 'ComicReal';
   }
 }

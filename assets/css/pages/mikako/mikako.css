@@ -1,2 +1,288 @@
 @import "../../global/style.css";
 
+/*----------------*/
+/*-----Header-----*/
+/*----------------*/
+header {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #b196be;
+}
+
+
+/*----------------------*/
+/*---Banner Carrossel---*/
+/*----------------------*/
+.espaço-banner {
+  display: flex;
+  justify-content: center;
+  background-color: var(--banner-bg);
+  border-bottom: 5px var(--banner-bg) solid;
+}
+
+.carousel {
+  width: 90%;
+  aspect-ratio: 2.4 / 1;
+  /* ajuste para a proporção real que você quer no banner */
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.prev,
+.next {
+  width: 4%;
+  height: 9.6%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #d66dff7d;
+  color: #fff9e7;
+  border: 2px solid #b196be;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 28;
+}
+
+.dot {
+  display: inline-block;
+  margin: 0 5px;
+  background: #7b7b7b;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+  background: #131212;
+  border-radius: 5px;
+  transform: scale(1.2);
+}
+
+
+/*-----------------------*/
+/*---------Cards---------*/
+/*-----------------------*/
+
+.items-card {
+  padding: 20px;
+
+  & .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
+    align-items: center;
+    gap: 20px;
+
+    & .card {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      background-color: chocolate;
+
+      & a {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+
+
+/*----------------*/
+/*----Produtos----*/
+/*----------------*/
+
+.novidades {
+  padding: 40px 20px;
+}
+
+
+.novidades-header h2 {
+  font-size: clamp(2rem, 7vw, 3rem);
+  margin: 0;
+}
+
+.products-title {
+  font-size: clamp(5px, 8vw, 30px);
+  padding: 0px 20px 0px 20px;
+  /* color: var(--h-roxo); */
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px 0px;
+  box-sizing: border-box;
+}
+
+.produto-card {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.produto-img {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.produto-img img {
+  width: 100%;
+  display: block;
+  transition: opacity 0.4s ease;
+  max-width: 100%;
+  height: auto;
+}
+
+.produto-img .img-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.produto-card:hover .img-hover {
+  opacity: 1;
+}
+
+.produto-card:hover .img-principal {
+  opacity: 0;
+}
+
+.produto-info {
+  margin-top: 10px;
+  text-align: left;
+  /* color: var(--p-marrom); */
+}
+
+.produto-nome {
+  font-size: 1.1em;
+}
+
+.produto-preco {
+  /* color: var(--p-roxo); */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.btn-comprar {
+  width: 100%;
+  /* background-color: var(--btn-marrom);
+  color: var(--a-color); */
+  border-radius: 70px;
+  padding: 10px;
+  cursor: pointer;
+  border-style: none;
+}
+
+/* .btn-comprar:hover {
+  background-color: var(--btn-hover);
+} */
+
+
+/*-----------------------------------------*/
+/*---------Formulario de encomenda---------*/
+/*-----------------------------------------*/
+
+.para-contato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  & .formulario {
+    width: 45%;
+
+    & label {
+      color: var(--p-marrom);
+    }
+
+    & form {
+      display: flex;
+      flex-direction: column;
+
+      & label {
+        margin-bottom: 5px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      & input,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 15px;
+      }
+
+      & textarea {
+        height: 140px;
+        resize: vertical;
+      }
+    }
+  }
+
+  & .btn {
+    background-color: #de4f70;
+    color: var(--a-color);
+    padding: 14px;
+    border: none;
+    border-radius: 70px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    align-self: center;
+  }
+
+  & .btn:hover {
+    opacity: 0.8;
+  }
+}
