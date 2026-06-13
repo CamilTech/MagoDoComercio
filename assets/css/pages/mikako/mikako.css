@@ -1,4 +1,37 @@
 @import "../../global/style.css";
+@import "./mikako-responsive.css";
+
+@font-face {
+  font-family: CormorantGaramond;
+  src: url("../../../componentes/fonts/CormorantGaramond-Italic-VariableFont_wght.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: Deutsch;
+  src: url("../../../componentes/fonts/Deutsch.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: Lobster;
+  src: url("../../../componentes/fonts/Lobster-Regular.ttf") format('truetype');
+}
+
+body{
+  background-image: url("https://i.pinimg.com/736x/6c/e1/35/6ce13546ec121d808a4b7b3d97857ce7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; 
+  font-family: "CormorantGaramond";
+}
+
+h1, h2{
+  font-family: "Deutsch";
+  color: var(--mikako-main);
+}
+
+h3, h4, h5, h6, input{
+  font-family: "Lobster";
+}
 
 /*----------------*/
 /*-----Header-----*/
@@ -7,7 +40,25 @@ header {
   display: flex;
   justify-content: space-around;
   padding: 20px;
-  background-color: #b196be;
+  background-color: #fff1f8;
+  color: var(--mikako-main);
+  align-items: center;
+
+  & a{
+    & img{
+      max-height: 90px;
+    }
+  }
+
+  & .aside-items{
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+
+    & img{
+      max-width: 50px;
+    }
+  }
 }
 
 
@@ -17,82 +68,57 @@ header {
 .espaço-banner {
   display: flex;
   justify-content: center;
-  background-color: var(--banner-bg);
-  border-bottom: 5px var(--banner-bg) solid;
-}
+  background-color: #2fb3756c;
+  border-bottom: 5px var(--mikako-main) solid;
 
-.carousel {
-  width: 90%;
-  aspect-ratio: 2.4 / 1;
-  /* ajuste para a proporção real que você quer no banner */
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-}
+  & .carousel {
+    width: 90%;
+    aspect-ratio: 2.4 / 1;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
 
-.carousel-slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  height: 100%;
-}
+    & .carousel-slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      height: 100%;
 
-.slide {
-  flex: 0 0 100%;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+      & .slide {
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
 
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
+        & img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
 
-.prev,
-.next {
-  width: 4%;
-  height: 9.6%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #d66dff7d;
-  color: #fff9e7;
-  border: 2px solid #b196be;
-  border-radius: 50%;
-  cursor: pointer;
-}
+    & .prev, .next {
+      width: 4%;
+      height: 9.6%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #d85ca0da;
+      color: var(--bg-mikako);
+      border: 2px solid var(--mikako-main);
+      border-radius: 50%;
+      cursor: pointer;
+    }
 
-.prev {
-  left: 10px;
-}
+    & .prev {
+      left: 10px;
+    }
 
-.next {
-  right: 10px;
-}
-
-.indicators {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 28;
-}
-
-.dot {
-  display: inline-block;
-  margin: 0 5px;
-  background: #7b7b7b;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.dot.active {
-  background: #131212;
-  border-radius: 5px;
-  transform: scale(1.2);
+    & .next {
+      right: 10px;
+    }
+  }
 }
 
 
@@ -114,16 +140,39 @@ header {
       display: flex;
       justify-content: center;
       padding: 10px;
-      background-color: chocolate;
+      background-color: #fff2f9ec;
+      border-radius: 10px;
+      border: 2px solid #ff1ac6;
+      transition: 0.5s ease-out;
 
       & a {
+        display: flex;
+        flex-direction: column;
         text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        transition: 0.5s ease-out;
+        font-size: 25px;
+
+        & img{
+          max-width: 300px;
+          border-radius: 5px;
+          border: 2px solid var(--mikako-g);
+        }
       }
     }
   }
+
+  & .card:hover{
+    transform: scale(1.05);
+    background-color: #ffebf6f7;
+
+    & a:hover{
+      color: #b32f78;
+    }
+  }
 }
-
-
 
 
 /*----------------*/
@@ -132,98 +181,96 @@ header {
 
 .novidades {
   padding: 40px 20px;
+  background-color: var(--bg-mikako);
+
+  & .products-title {
+    font-size: 40px;
+    padding: 0px 20px 0px 20px;
+    color: var(--mikako-main);
+  }
+
+  & .produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px 0px;
+    box-sizing: border-box;
+
+    & .produto-card {
+      padding: 15px;
+      display: flex;
+      border-radius: 5px;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+      max-width: 100%;
+      overflow: hidden;
+      background-color: #f0fff9db;
+
+      & .produto-img {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 6px;
+        box-sizing: border-box;
+
+        & img {
+          width: 100%;
+          display: block;
+          transition: opacity 0.4s ease;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      & .produto-img .img-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+
+      & .produto-info {
+        margin-top: 10px;
+        text-align: left;
+        /* color: var(--p-marrom); */
+
+        & .produto-nome {
+          font-size: 1.1em;
+        }
+
+        & .produto-preco {
+          /* color: var(--p-roxo); */
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
+        & .btn-comprar {
+          width: 100%;
+          background-color: var(--mikako-g);
+          color: #fff;
+          border-radius: 70px;
+          padding: 10px;
+          cursor: pointer;
+          border-style: none;
+        }
+
+        & .btn-comprar:hover {
+          background-color: #b8338e;
+          transition: 0.5s ease;
+        }
+      }
+    }
+
+    & .produto-card:hover .img-hover {
+      opacity: 1;
+    }
+
+    & .produto-card:hover .img-principal {
+      opacity: 0;
+    }
+  }
 }
-
-
-.novidades-header h2 {
-  font-size: clamp(2rem, 7vw, 3rem);
-  margin: 0;
-}
-
-.products-title {
-  font-size: clamp(5px, 8vw, 30px);
-  padding: 0px 20px 0px 20px;
-  /* color: var(--h-roxo); */
-}
-
-.produtos-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 20px 0px;
-  box-sizing: border-box;
-}
-
-.produto-card {
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.produto-img {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 3px;
-  box-sizing: border-box;
-}
-
-.produto-img img {
-  width: 100%;
-  display: block;
-  transition: opacity 0.4s ease;
-  max-width: 100%;
-  height: auto;
-}
-
-.produto-img .img-hover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-
-.produto-card:hover .img-hover {
-  opacity: 1;
-}
-
-.produto-card:hover .img-principal {
-  opacity: 0;
-}
-
-.produto-info {
-  margin-top: 10px;
-  text-align: left;
-  /* color: var(--p-marrom); */
-}
-
-.produto-nome {
-  font-size: 1.1em;
-}
-
-.produto-preco {
-  /* color: var(--p-roxo); */
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.btn-comprar {
-  width: 100%;
-  /* background-color: var(--btn-marrom);
-  color: var(--a-color); */
-  border-radius: 70px;
-  padding: 10px;
-  cursor: pointer;
-  border-style: none;
-}
-
-/* .btn-comprar:hover {
-  background-color: var(--btn-hover);
-} */
 
 
 /*-----------------------------------------*/
@@ -234,13 +281,19 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--bg-mikako);
   gap: 40px;
+  & h2{
+    font-size: 50px; 
+  }
+
 
   & .formulario {
     width: 45%;
 
     & label {
-      color: var(--p-marrom);
+      color: #2f001a;
+      font-size: 30px;
     }
 
     & form {
@@ -272,7 +325,7 @@ header {
 
   & .btn {
     background-color: #de4f70;
-    color: var(--a-color);
+    color: #fff;
     padding: 14px;
     border: none;
     border-radius: 70px;
@@ -280,9 +333,10 @@ header {
     cursor: pointer;
     width: 100%;
     align-self: center;
+    transition: 0.5s ease;
   }
 
   & .btn:hover {
-    opacity: 0.8;
+    background-color: var(--mikako-g);
   }
 }
