@@ -1,5 +1,6 @@
 @import '../../global/style.css';
 @import './carousel.css';
+@import './index-resp.css';
 
 @font-face {
   font-family: Komigo;
