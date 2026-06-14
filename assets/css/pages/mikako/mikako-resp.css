@@ -7,21 +7,21 @@
 
   header {
     padding: 0.75rem !important;
-  }
 
-  header img {
-    max-width: 140px;
-    height: auto;
+    & img {
+      max-width: 140px;
+      height: auto;
+    }
   }
 
   .carousel {
     width: 100% !important;
-  }
 
-  .carousel img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    & img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
   }
 
   .prev,
@@ -30,18 +30,20 @@
     height: 44px !important;
   }
 
-  .items-card .cards {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
-    gap: 10px !important;
-    padding: 10px !important;
-  }
+  .items-card {
+    & .cards {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+      gap: 10px !important;
+      padding: 10px !important;
+    }
 
-  .items-card .card {
-    padding: 8px !important;
-  }
+    & .card {
+      padding: 8px !important;
 
-  .items-card .card img{
-    max-width: 120px !important;
+      & img {
+        max-width: 120px !important;
+      }
+    }
   }
 
   .produtos-grid {
@@ -53,17 +55,19 @@
     padding: 8px !important;
   }
 
-  .produto-img img {
-    width: 100%;
-    height: auto;
+  .produto-img {
+    & img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   .produto-info {
     font-size: 0.95rem;
   }
 
-  .para-contato .formulario {
-    width: 100%;
+  .formulario {
+    width: 80% !important;
     padding: 1rem;
   }
 
@@ -72,10 +76,6 @@
     min-height: 44px;
     padding: 0.6rem 1rem;
   }
-
-  .formulario{
-    width: 80% !important;
-  }
 }
 
 @media (min-width: 768px) {
@@ -83,18 +83,26 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-    .items-card .card img{
-    max-width: 140px !important;
+  .items-card {
+    & .card {
+      & img {
+        max-width: 140px !important;
+      }
+    }
   }
 
   .carousel {
-    aspect-ratio: 2.4/1;
+    aspect-ratio: 2.4 / 1;
   }
 }
 
-@media (max-width: 346px){
-  .items-card .card img{
-    max-width: 190px !important;
+@media (max-width: 346px) {
+  .items-card {
+    & .card {
+      & img {
+        max-width: 190px !important;
+      }
+    }
   }
 }
 
