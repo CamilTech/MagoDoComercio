@@ -34,11 +34,34 @@ setInterval(() => {
   showSlide(current + 1);
 }, 7000); // muda a cada x segundos
 
-const user = JSON.parse(
-  localStorage.getItem("akindoUser")
-);
+// Função para verificar login
+function verificarLogin() {
+  const user = JSON.parse(
+    localStorage.getItem("akindoUser")
+  );
 
-if (!user) {
-  alert("Faça login para continuar");
-  window.location.href = "../login.html";
+  if (!user) {
+    alert("Faça login para continuar");
+    window.location.href = "../login.html";
+    return false;
+  }
+  return true;
+}
+
+// Event listener para botões de comprar
+const botoesComprar = document.querySelectorAll('.btn-comprar');
+botoesComprar.forEach(botao => {
+  botao.addEventListener('click', (e) => {
+    e.preventDefault();
+    verificarLogin();
+  });
+});
+
+// Event listener para ícone do carrinho
+const cartIcon = document.querySelector('header .aside-items img:last-child');
+if (cartIcon) {
+  cartIcon.addEventListener('click', (e) => {
+    e.preventDefault();
+    verificarLogin();
+  });
 }

@@ -12,6 +12,10 @@
       max-width: 140px;
       height: auto;
     }
+
+    & .aside-items{
+      gap: 10px !important; 
+    }
   }
 
   .carousel {
@@ -66,9 +70,16 @@
     font-size: 0.95rem;
   }
 
+  & .para-contato{
+    & h2{
+      font-size: 40px !important;
+      padding: 20px !important;
+    }
+  }
+
   .formulario {
-    width: 80% !important;
-    padding: 1rem;
+    width: 100% !important;
+    padding: 20px;
   }
 
   button,
@@ -97,6 +108,12 @@
 }
 
 @media (max-width: 346px) {
+    header {
+    & img {
+      max-width: 100px;
+    }
+  }
+
   .items-card {
     & .card {
       & img {
