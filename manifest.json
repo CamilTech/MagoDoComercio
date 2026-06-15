@@ -1,0 +1,17 @@
+{
+    "name": "Akindo - Mago do Comércio",
+    "short_name": "Akindo",
+    "description": "PWA da loja Akindo com navegação offline e instalação no dispositivo.",
+    "start_url": ".",
+    "scope": ".",
+    "display": "standalone",
+    "background_color": "#f7f1da",
+    "theme_color": "#f7c435",
+    "icons": [
+        {
+            "src": "assets/componentes/img/favicon/favicon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}
