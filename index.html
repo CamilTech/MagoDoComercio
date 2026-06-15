@@ -41,7 +41,7 @@
       <div class="list">
         <div class="item active">
           <div class="persona-img">
-            <img src="assets/componentes/img/carousel-img/Mikako.png" alt="imagem mikako">
+            <img src="assets/componentes/img/carousel-img/mikako.png" alt="imagem mikako">
           </div>
 
           <div class="content">
@@ -348,18 +348,22 @@
     </div>
 
     <div class="formulario">
-      <form action="">
-        <label for="name">Nome completo:</label>
-        <input type="text" required>
+      <form onsubmit="alert('Mensagem enviada com sucesso!');" action="https://formsubmit.co/suporteakindo@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Novo contato do site Akindo">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
 
-        <label for="email">E-mail:</label>
-        <input type="email" required>
+        <label for="name-index">Nome completo:</label>
+        <input id="name-index" name="name" type="text" required>
 
-        <label for="tel">Telefone:</label>
-        <input type="tel">
+        <label for="email-index">E-mail:</label>
+        <input id="email-index" name="email" type="email" required>
 
-        <label for="mensagem">Mensagem:</label>
-        <textarea required></textarea>
+        <label for="tel-index">Telefone:</label>
+        <input id="tel-index" name="tel" type="tel" required>
+
+        <label for="mensagem-index">Mensagem:</label>
+        <textarea id="mensagem-index" name="mensagem" required></textarea>
 
         <input type="submit" value="Enviar" class="btn">
       </form>
@@ -422,5 +426,4 @@
     }
   </script>
 </body>
-
 </html>

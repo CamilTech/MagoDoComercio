@@ -5,14 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AKINDO - Login</title>
 
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
   <link rel="stylesheet" href="../css/pages/login/login.css">
 </head>
 
 <body>
-  <div class="login-card">
-    <div class="speech">
-      LOGIN
+   <header>
+    <div class="akindo-logo">
+      <a href="../../index.html">
+        <img src="../componentes/img/logo/logo-akindo.png" alt="logo de Akindo">
+      </a>
     </div>
+  </header>
+
+  <div class="login-card">
+    <div class="speech">LOGIN</div>
 
     <form>
       <input type="email" placeholder="Digite seu email">
@@ -23,6 +31,21 @@
       </button>
 
     </form>
+
+    <div
+      id="g_id_onload"
+      data-client_id="290432713666-niidgae0sm1jg3k28tqktr98rbkgsk9i.apps.googleusercontent.com"
+      data-callback="handleCredentialResponse">
+    </div>
+
+    <div
+      class="g_id_signin"
+      data-type="standard"
+      data-theme="filled_blue"
+      data-size="large">
+    </div>    
   </div>
+
+  <script src="../js/pages/login.js"></script>
 </body>
 </html>

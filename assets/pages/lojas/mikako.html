@@ -255,18 +255,22 @@
     <h2>Você também pode encomendar suas roupas!</h2>
 
     <div class="formulario">
-      <form action="">
-        <label for="name">Nome completo:</label>
-        <input type="text" required>
+      <form onsubmit="alert('Mensagem enviada com sucesso!');" action="https://formsubmit.co/suporteakindo@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Novo contato do site Akindo">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
 
-        <label for="email">E-mail:</label>
-        <input type="email" required>
+        <label for="name-mikako">Nome completo:</label>
+        <input id="name-mikako" name="name" type="text" required>
 
-        <label for="tel">Telefone:</label>
-        <input type="tel">
+        <label for="email-mikako">E-mail:</label>
+        <input id="email-mikako" name="email" type="email" required>
 
-        <label for="mensagem">Mensagem:</label>
-        <textarea required></textarea>
+        <label for="tel-mikako">Telefone:</label>
+        <input id="tel-mikako" name="tel" type="tel" required>
+
+        <label for="mensagem-mikako">Mensagem:</label>
+        <textarea id="mensagem-mikako" name="mensagem" required></textarea>
 
         <input type="submit" value="Enviar" class="btn">
       </form>

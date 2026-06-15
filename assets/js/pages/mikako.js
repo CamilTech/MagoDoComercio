@@ -33,3 +33,12 @@ prevBtn.addEventListener('click', () => {
 setInterval(() => {
   showSlide(current + 1);
 }, 7000); // muda a cada x segundos
+
+const user = JSON.parse(
+  localStorage.getItem("akindoUser")
+);
+
+if (!user) {
+  alert("Faça login para continuar");
+  window.location.href = "../login.html";
+}

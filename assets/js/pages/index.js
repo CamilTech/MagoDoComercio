@@ -47,3 +47,11 @@ prevButton.onclick = () => {
   setSlider()
   items[active].classList.add('active')
 }
+
+const user = JSON.parse(
+  localStorage.getItem("akindoUser")
+);
+
+if (user) {
+  console.log("Usuário logado:", user);
+}
