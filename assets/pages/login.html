@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AKINDO - Login</title>
 
   <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <link rel="shortcut icon" href="../componentes/img/favicon/favicon.png" type="image/x-icon">
 
   <link rel="stylesheet" href="../css/pages/login/login.css">
+  <link rel="stylesheet" href="../css/page-transition.css">
 </head>
 
 <body>
-   <header>
+  <header>
     <div class="akindo-logo">
       <a href="../../index.html">
         <img src="../componentes/img/logo/logo-akindo.png" alt="logo de Akindo">
@@ -32,20 +35,16 @@
 
     </form>
 
-    <div
-      id="g_id_onload"
-      data-client_id="290432713666-niidgae0sm1jg3k28tqktr98rbkgsk9i.apps.googleusercontent.com"
+    <div id="g_id_onload" data-client_id="290432713666-niidgae0sm1jg3k28tqktr98rbkgsk9i.apps.googleusercontent.com"
       data-callback="handleCredentialResponse">
     </div>
 
-    <div
-      class="g_id_signin"
-      data-type="standard"
-      data-theme="filled_blue"
-      data-size="large">
-    </div>    
+    <div class="g_id_signin" data-type="standard" data-theme="filled_blue" data-size="large">
+    </div>
   </div>
 
+  <script src="../js/page-transition.js"></script>
   <script src="../js/pages/login.js"></script>
 </body>
+
 </html>

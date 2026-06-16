@@ -1,0 +1,143 @@
+/* Page transition overlay styles */
+.page-transition-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 228, 234, 0.96);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    transform: scale(1.02);
+}
+
+.page-transition-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.page-transition-inner {
+    text-align: center;
+    max-width: min(340px, 90vw);
+    padding: 2rem 1.5rem;
+    border-radius: 28px;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 24px 60px rgba(151, 35, 69, 0.12);
+}
+
+.transition-logo {
+    width: 72px;
+    height: 72px;
+    margin-inline: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 239, 246, 0.96));
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.92);
+    animation: logo-pulse 1.6s ease-in-out infinite;
+}
+
+.transition-logo img {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+    display: block;
+}
+
+.page-transition-text {
+    margin-top: 1.35rem;
+    display: grid;
+    gap: 0.75rem;
+    color: #8f5f75;
+}
+
+.page-transition-text .loading-text {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.loading-dots {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+}
+
+.loading-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d46a94;
+    opacity: 0.35;
+    animation: dot-bounce 1s infinite ease-in-out;
+}
+
+.loading-dots span:nth-child(2) {
+    animation-delay: 0.14s;
+}
+
+.loading-dots span:nth-child(3) {
+    animation-delay: 0.28s;
+}
+
+@keyframes dot-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: translateY(-6px);
+        opacity: 1;
+    }
+}
+
+@keyframes logo-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+@media (max-width: 480px) {
+    .page-transition-inner {
+        padding: 1.75rem 1rem;
+        border-radius: 24px;
+    }
+
+    .transition-logo {
+        width: 76px;
+        height: 76px;
+        font-size: 1.2rem;
+    }
+
+    .page-transition-text .loading-text {
+        font-size: 0.95rem;
+    }
+}
